@@ -3,10 +3,7 @@ from vfinalsearch import search4letters
 
 app = Flask(__name__)
 
-@app.route("/")   # This maps the root URL (http://127.0.0.1:5001/) to the function
-def hello() -> str:
-    return "hello world from Flask!"
-
+ 
 @app.route('/search4', methods=['POST'])
 def do_search() -> str:
     phrase = request.form['phrase']
@@ -22,7 +19,7 @@ def do_search() -> str:
         the_letters=letters,
         the_phrase=phrase,
     )
-
+@app.route("/") 
 @app.route('/entry')
 def entry_page() -> 'html':
     return render_template(
