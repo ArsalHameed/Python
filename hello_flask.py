@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request,escape
+from flask import Flask, render_template, request
+from markupsafe import escape
 from vfinalsearch import search4letters
 
 app = Flask(__name__)
