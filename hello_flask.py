@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 def log_request(req: 'flask_request',res: str) -> None:
     with open('vsearch.log','a') as log:
-        print(str(dir(req)),res,file=log)
+        print(req.form,req.remote_addr,req.user_agent,res,file=log,sep='|')
  
 @app.route('/search4', methods=['POST'])
 def do_search() -> str:
