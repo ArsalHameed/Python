@@ -1,0 +1,1 @@
+print("Did not study today")
